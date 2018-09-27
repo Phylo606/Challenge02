@@ -58,15 +58,20 @@ $(document).ready(function () {
     var nu = 1
     function refreshgrid() {
         
-        console.log(nu)
-        console.log(tilelist)
+        //console.log(nu)
+        //console.log(tilelist)
         settilelist()
         setplayerlist()
-
+        console.log("~~~~~~~~~~~~~~~~~~~~~")
         for (const tile in tilelist) {
+            console.log(tilelist)
             for (const player in playerlist) {
+                console.log("#######################################")
                 if (tilelist[tile].player == playerlist[player].id) {
                     $("#" + tilelist[tile].id).removeClass().addClass("fa " + playerlist[player].icon)
+                    console.log("Updating: " + tilelist[tile].id)
+                    console.log("Into: " + playerlist[player].icon)
+                    console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
                     $("#" + tilelist[tile].id).css('color', playerlist[player].color)
                     $("#" + tilelist[tile].id).attr('data-player', playerlist[player].id)
                 }
@@ -102,6 +107,7 @@ $(document).ready(function () {
     }
 
     $('#start-game').click(function () {
+        console.log("Building board here")
         buildGameGrid(10, 10)
         refreshgrid()
     });
