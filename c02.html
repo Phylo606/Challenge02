@@ -10,7 +10,7 @@
 
 
 <div id="createPlayer">
-    <h3>Please enter your name, icon code and select a colour:</h3>
+    <h3>If you would like to create a new player, please enter your name, icon code and select a colour:</h3>
     Visit <a href="https://fontawesome.com/v4.7.0/icons/" target="_blank">Font Awesome Icons</a>, choose an icon and enter the icon's ID in the field below. Example: fa-fighter-jet<br><br>
     <form action="" method="">
         Player name: <input id="player-name" class="form-control" type="string" min=3 max=25><br>
@@ -21,27 +21,31 @@
 
 
 <div id="set-button">
-    <button id="set-player" class="btn btn-primary" onclick="">Set player</button>
     <button id="create-player" class="btn btn-primary" onclick="">Create player</button>
     <br>
     <br>
 </div>
 
 
+<div id="start-button">
+    <h3>When ready, click "start game"</h3>
+    <button id="start-game" class="btn btn-primary">Start game</button>
+</div>
+
+
 <div id="selectPlayer">
-    <h3>Alternatively, select a pre-existing player from below:</h3>
+    <h3>Now, select your player from below:</h3>
     <!--<button id="get-players" class="btn btn-primary" onclick="">Get players</button>-->
     <select id="player-select">
         <option value="-1">Select Player</option>
     </select>
 </div>
 
-<div id="start-button">
-    <h3>When you are prepared, click "Start game"</h3>
-    <button id="start-game" class="btn btn-primary">Start game</button>
-</div>
+
 <table id = "my-grid">    
 </table>
+
+
 <script src="jquery-3.3.1.js"></script>
 <script src="c02.js"></script>
 </body>
