@@ -29,15 +29,15 @@ $(document).ready(function () {
     setplayerlist()
 
     function settilelist() {
-        tilelist = {}
+
         $.ajax({
             url: "http://localhost:3000/tiles/",
             success: function (result) {
-                
+                tilelist = {}
 
                 for (var i = 0; i < result.length; i++) {
                     //tilelist.push(result[i])
-                    
+
                     tilelist[i] = result[i]
                 }
             }
@@ -48,21 +48,23 @@ $(document).ready(function () {
         playerlist = {}
         $.ajax({
             url: "http://localhost:3000/players/",
-            success: async function (result) {
-                
+            success: function (result) {
+                playerlist = {}
 
                 for (var i = 0; i < result.length; i++) {
                     //playerlist.push(result[i])
                     //console.log(result)
+
+                    playerlist[i] = result[i]
                 }
             }
         });
     }
     var nu = 1
     function refreshgrid() {
-        
+
         //console.log(nu)
-        
+
         settilelist()
         setplayerlist()
         console.log(tilelist.length)
@@ -198,7 +200,7 @@ $(document).ready(function () {
         else if (num > 5) {
             (console.log("Number is greater than 5"))
         }
-        
+
 
     });
 
