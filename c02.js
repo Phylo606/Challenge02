@@ -45,7 +45,6 @@ $(document).ready(function () {
     }
 
     function setplayerlist() {
-        playerlist = {}
         $.ajax({
             url: "http://localhost:3000/players/",
             success: function (result) {
