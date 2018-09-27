@@ -1,4 +1,4 @@
-
+//json-server --watch db.json
 var currentPlayer = []
 let playerID = "";
 let playerName = "";
