@@ -33,15 +33,15 @@ $(document).ready(function () {
         $.ajax({
             url: "http://localhost:3000/tiles/",
             success: function (result) {
-                console.log(tilelist)
+                
 
                 for (var i = 0; i < result.length; i++) {
                     //tilelist.push(result[i])
-                    console.log(result)
+                    
+                    tilelist[i] = result[i]
                 }
             }
         });
-        console.log(tilelist)
     }
 
     function setplayerlist() {
@@ -56,19 +56,17 @@ $(document).ready(function () {
                     //console.log(result)
                 }
             }
-        }); 
-        console.log(tilelist)
+        });
     }
     var nu = 1
     function refreshgrid() {
         
         //console.log(nu)
-        console.log(tilelist)
+        
         settilelist()
         setplayerlist()
-        console.log(tilelist)
+        console.log(tilelist.length)
         for (const tile in tilelist) {
-            console.log(tilelist)
             for (const player in playerlist) {
                 console.log("#######################################")
                 if (tilelist[tile].player == playerlist[player].id) {
@@ -225,7 +223,6 @@ $(document).ready(function () {
                 html += "</td>";
             }
             html += "</tr>";
-            console.log(tilelist)
         }
         $("#my-grid").html(html);
     }
