@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Week 8 Challenge</title>
+    <link rel="stylesheet" type="text/css" href="c02.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">        
+</head>
+
+<body>
+    <h1>Challenge 2</h1>
+
+
+<div id="createPlayer">
+    <h3>Please enter your name, icon code and select a colour:</h3>
+    Visit <a href="https://fontawesome.com/v4.7.0/icons/" target="_blank">Font Awesome Icons</a>, choose an icon and enter the icon's ID in the field below. Example: fa-fighter-jet<br><br>
+    <form action="" method="">
+        Player name: <input id="player-name" class="form-control" type="string" min=3 max=25><br>
+        Icon:   <input id="player-icon" class="form-control" type="string"><br>
+        Colour: <input id="player-color" class="form-control" type="color"><br>
+    </form>
+</div>
+
+
+<div id="set-button">
+    <button id="set-player" class="btn btn-primary" onclick="">Set player</button>
+    <button id="create-player" class="btn btn-primary" onclick="">Create player</button>
+    <br>
+    <br>
+</div>
+
+
+<div id="selectPlayer">
+    <h3>Alternatively, select a pre-existing player from below:</h3>
+    <!--<button id="get-players" class="btn btn-primary" onclick="">Get players</button>-->
+    <select id="player-select">
+        <option value="-1">Select Player</option>
+    </select>
+</div>
+
+<div id="start-button">
+    <h3>When you are prepared, click "Start game"</h3>
+    <button id="start-game" class="btn btn-primary">Start game</button>
+</div>
+<table id = "my-grid">    
+</table>
+<script src="jquery-3.3.1.js"></script>
+<script src="c02.js"></script>
+</body>
+</html>
