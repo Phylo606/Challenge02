@@ -6,8 +6,8 @@ currentPlayer[3] = 3;
 let playerIcon = "";
 let playerColor = "";
 
-let tilelist = [];
-let playerlist = [];
+let tilelist = {};
+let playerlist = {};
 
 $(document).ready(function () {
 
@@ -29,40 +29,44 @@ $(document).ready(function () {
     setplayerlist()
 
     function settilelist() {
-        tilelist = []
+        tilelist = {}
         $.ajax({
             url: "http://localhost:3000/tiles/",
             success: function (result) {
-                
+                console.log(tilelist)
 
                 for (var i = 0; i < result.length; i++) {
-                    tilelist.push(result[i])
+                    //tilelist.push(result[i])
+                    console.log(result)
                 }
             }
         });
+        console.log(tilelist)
     }
 
     function setplayerlist() {
-        playerlist = []
+        playerlist = {}
         $.ajax({
             url: "http://localhost:3000/players/",
             success: async function (result) {
                 
 
                 for (var i = 0; i < result.length; i++) {
-                    playerlist.push(result[i])
+                    //playerlist.push(result[i])
+                    //console.log(result)
                 }
             }
-        });
+        }); 
+        console.log(tilelist)
     }
     var nu = 1
     function refreshgrid() {
         
         //console.log(nu)
-        //console.log(tilelist)
+        console.log(tilelist)
         settilelist()
         setplayerlist()
-        console.log("~~~~~~~~~~~~~~~~~~~~~")
+        console.log(tilelist)
         for (const tile in tilelist) {
             console.log(tilelist)
             for (const player in playerlist) {
@@ -221,6 +225,7 @@ $(document).ready(function () {
                 html += "</td>";
             }
             html += "</tr>";
+            console.log(tilelist)
         }
         $("#my-grid").html(html);
     }
